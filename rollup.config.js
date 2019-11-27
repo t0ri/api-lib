@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
-import { terser } from 'rollup-plugin-terser';
-import typescript from 'rollup-plugin-typescript2';
+import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript2'
 
 export default [
   {
@@ -12,9 +12,9 @@ export default [
       }),
     ],
     output: {
-      file: 'umd/your-module.js',
+      file: 'umd/weather.js',
       format: 'umd',
-      name: 'yourModule',
+      name: 'weather',
       esModule: false,
     },
   },
@@ -27,7 +27,7 @@ export default [
       }),
     ],
     output: {
-      file: 'esm/index.js',
+      file: 'esm/weather.js',
       format: 'esm',
     },
   },
