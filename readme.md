@@ -1,5 +1,5 @@
 # OpenWeatherMap Essentials
-Receive only the essential data back from the OpenWeatherMap API.
+Receive only the essential data back from the OpenWeatherMap API in an easy-to-navigate Weather object.
 
 ```
 Weather {
