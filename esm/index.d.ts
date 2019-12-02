@@ -34,7 +34,7 @@ declare class Weather {
     zip: number;
     apiKey: string;
     units: string;
-    clouds: string;
+    cloudiness: number;
     sun: object;
     location: object;
     temp: object;

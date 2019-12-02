@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,11 +35,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var fetching = require('node-fetch');
 var Weather = /** @class */ (function () {
     function Weather(options) {
         // Weather Data Properties
-        this.clouds = undefined;
+        this.cloudiness = undefined;
         this.sun = undefined;
         this.location = undefined;
         this.temp = undefined;
@@ -109,7 +111,7 @@ var Weather = /** @class */ (function () {
             direction: this.degToDirection(deg),
             speed: Number(speed.toFixed(0)),
         };
-        this.clouds = cloudData.all;
+        this.cloudiness = cloudData.all;
         this.location = {
             city: city,
             country: country,
@@ -143,7 +145,7 @@ var Weather = /** @class */ (function () {
             return 'E';
         if (deg > 22.5)
             return 'NE';
-        return null;
+        return 'N';
     };
     // eslint-disable-next-line class-methods-use-this
     Weather.prototype.timestampToString = function (unixTimestamp) {
@@ -156,5 +158,6 @@ var Weather = /** @class */ (function () {
     };
     return Weather;
 }());
-var weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 00000 });
-setTimeout(function () { console.log(weather); }, 500);
+exports.default = Weather;
+var weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 94108 });
+setTimeout(function () { console.log(weather); }, 1000);

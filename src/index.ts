@@ -39,29 +39,32 @@ interface Sun {
   set: string,
 }
 
-class Weather {
+export default class Weather {
   // TypeScript Type Declaration
   zip: number
   apiKey: string
   units: string
-  clouds: string
+  cloudiness: number
   sun: object
   location: object
   temp: object
   air: object
   type: object
   wind: object
+  err: string
 
 
   constructor(options?: Options) {
     // Weather Data Properties
-    this.clouds = undefined
+    this.cloudiness = undefined
     this.sun = undefined
     this.location = undefined
     this.temp = undefined
     this.air = undefined
     this.type = undefined
     this.wind = undefined
+
+    this.err = undefined
 
     // If options were passed in,
     if (!options) { return }
@@ -89,7 +92,7 @@ class Weather {
       const data = await response.json()
       this.handleData(data)
     } catch(err) {
-      return err
+      this.err = err
     }
   }
 
@@ -129,7 +132,7 @@ class Weather {
       direction: this.degToDirection(deg),
       speed: Number(speed.toFixed(0)),
     }
-    this.clouds = cloudData.all
+    this.cloudiness = cloudData.all
     this.location = {
       city,
       country,
@@ -156,7 +159,7 @@ class Weather {
     if (deg > 122.5) return 'SE'
     if (deg > 67.5) return 'E'
     if (deg > 22.5) return 'NE'
-    return null
+    return 'N'
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -170,5 +173,5 @@ class Weather {
   }
 }
 
-const weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 33909 })
-setTimeout(() => { console.log(weather) }, 500)
+const weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 94108 })
+setTimeout(() => { console.log(weather) }, 1000)
