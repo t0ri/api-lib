@@ -41,11 +41,11 @@ declare class Weather {
     air: object;
     type: object;
     wind: object;
+    err: string;
     constructor(options?: Options);
     get path(): string;
-    getData(): Promise<any>;
+    getData(): Promise<void>;
     handleData(data: any): void;
     degToDirection(deg: number): "N" | "NW" | "W" | "SW" | "S" | "SE" | "E" | "NE";
     timestampToString(unixTimestamp: number): string;
 }
-declare const weather: Weather;

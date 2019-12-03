@@ -39,7 +39,7 @@ interface Sun {
   set: string,
 }
 
-export default class Weather {
+class Weather {
   // TypeScript Type Declaration
   zip: number
   apiKey: string
@@ -173,5 +173,4 @@ export default class Weather {
   }
 }
 
-const weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 94108 })
-setTimeout(() => { console.log(weather) }, 1000)
+module.exports = Weather
