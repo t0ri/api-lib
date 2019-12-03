@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,7 +34,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var fetching = require('node-fetch');
 var Weather = /** @class */ (function () {
     function Weather(options) {
@@ -47,6 +45,7 @@ var Weather = /** @class */ (function () {
         this.air = undefined;
         this.type = undefined;
         this.wind = undefined;
+        this.err = undefined;
         // If options were passed in,
         if (!options) {
             return;
@@ -87,7 +86,8 @@ var Weather = /** @class */ (function () {
                         return [3 /*break*/, 4];
                     case 3:
                         err_1 = _a.sent();
-                        return [2 /*return*/, err_1];
+                        this.err = err_1;
+                        return [3 /*break*/, 4];
                     case 4: return [2 /*return*/];
                 }
             });
@@ -158,6 +158,4 @@ var Weather = /** @class */ (function () {
     };
     return Weather;
 }());
-exports.default = Weather;
-var weather = new Weather({ apiKey: '1429c4bd0156c07f3d7a9629c723828a', zip: 94108 });
-setTimeout(function () { console.log(weather); }, 1000);
+module.exports = Weather;
