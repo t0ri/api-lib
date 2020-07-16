@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t0ri/api-lib.git"
+    "url": "git+https://github.com/t0ri/openweathermap-essentials.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/t0ri/api-lib/issues"
+    "url": "https://github.com/t0ri/openweathermap-essentials/issues"
   },
-  "homepage": "https://github.com/t0ri/api-lib#readme",
+  "homepage": "https://github.com/t0ri/openweathermap-essentials#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "coveralls": "^3.0.9",
